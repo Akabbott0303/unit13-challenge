@@ -2,6 +2,8 @@
 
 Chatbots are a common feature on modern websites.  The bots do everything from assist with  order problems on Amazon to capturing initial information from potential clients on insurance company websites.  Chatbots use natural language processing and artificial intelligence to simulate conversation with a human.  
 
+![image](https://user-images.githubusercontent.com/85846948/140851443-02dbdd6d-28ee-4284-90a9-26869574f72f.png)
+
 One platform for developing chatbots is Amazon Lex, the interface that powers Amazon's own virtual assistant, Alexa.  Amazon Lex provides developers with an easy-to-use graphical user interface to build chatbots.  Developers input sample utterances that an end user would be likely to enter.  The prompts that will be used by a chatbot are controlled by slots, which can be configured to be simple lines of dialog or response cards, complete with buttons and icons.  
 
 Amazon's Lambda service is what breathes life, so to speak, into a chatbot created with Lex.  In Lambda, developers can create functions to control how chatbots respond to both valid and invalid user input.  The Lex GUI makes importing the Lamda function(s) as easy as checking boxes.  
