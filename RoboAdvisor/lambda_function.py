@@ -47,7 +47,7 @@ def validate_data(age, investment_amount, intent_request):
         if investment_amount < 5000:
             return build_validation_result(
                 False,
-                'investment_amount',
+                'investmentAmount',
                 'The investment amount should be at least $5,000. Please provide a correct amount to invest.'
             )
     
@@ -150,20 +150,19 @@ def recommend_portfolio(intent_request):
         return delegate(output_session_attributes, get_slots(intent_request))
 
     # Get the initial investment recommendation
-
-    ### YOUR FINAL INVESTMENT RECOMMENDATION CODE STARTS HERE ###
-    if risk_level == 'none':
-        initial_recommendation = '100% bonds (AGG), 0% equities (SPY)'
-    elif risk_level == 'very low':
-        intial_recommendation = '80% bonds (AGG), 20% equities (SPY)'
-    elif risk_level == 'low':
-        intial_recommendation = '60% bonds (AGG), 40% equities (SPY)'
-    elif risk_level == 'medium':
-        intial_recommendation = '40% bonds (AGG), 60% equities (SPY)'
-    elif risk_level == 'high':
-        intial_recommendation = '20% bonds (AGG), 80% equities (SPY)'
-    else:
-        intial_recommendation = '0% bonds (AGG), 100% equities (SPY)'
+    for risk in risk_level:
+        if risk_level == 'None':
+            initial_recommendation = '100% bonds (AGG), 0% equities (SPY)'
+        elif risk_level == 'Very Low':
+            initial_recommendation = '80% bonds (AGG), 20% equities (SPY)'
+        elif risk_level == 'Low':
+            initial_recommendation = '60% bonds (AGG), 40% equities (SPY)'
+        elif risk_level == 'Medium':
+            initial_recommendation = '40% bonds (AGG), 60% equities (SPY)'
+        elif risk_level == 'High':
+            initial_recommendation = '20% bonds (AGG), 80% equities (SPY)'
+        else:
+            initial_recommendation = '0% bonds (AGG), 100% equities (SPY)'
 
     # Return a message with the initial recommendation based on the risk level.
     return close(
